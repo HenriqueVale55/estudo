@@ -1,5 +1,6 @@
 package br.com.estudo.estudo.repository;
 
+import br.com.estudo.estudo.model.User;
 import br.com.estudo.estudo.model.UserData;
 import org.springframework.data.jpa.repository.JpaRepository;
 

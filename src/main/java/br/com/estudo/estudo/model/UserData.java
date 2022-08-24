@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "Usuarios")
@@ -14,7 +16,7 @@ import javax.persistence.*;
 public class UserData {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "nome")
@@ -30,5 +32,10 @@ public class UserData {
                 ", nome='" + nome + '\'' +
                 ", idade=" + idade +
                 '}';
+    }
+
+    public UserData(String nome, Integer idade) {
+        this.nome = nome;
+        this.idade = idade;
     }
 }
